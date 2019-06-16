@@ -1,22 +1,22 @@
 const path = require('path');
 const webpack = require('webpack');
-const TsConfigPathsPlugin = require('awesome-typescript-loader')
-  .TsConfigPathsPlugin;
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HappyPack = require('happypack');
-const {
-  BundleAnalyzerPlugin
-} = require('webpack-bundle-analyzer');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 // base config
 const config = {
   mode: process.env.NODE_ENV,
-  entry: './index.tsx',
+  entry: {
+    vendor: ['@babel/polyfill'],
+    main: ['./index.tsx']
+  },
   output: {
     filename: 'js/[name].[chunkhash:8].js',
     path: path.resolve(__dirname, 'dist')
@@ -24,22 +24,49 @@ const config = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.less'],
     alias: {
-      style: path.resolve(__dirname, 'src', 'style')
-    },
-    plugins: [new TsConfigPathsPlugin()]
+      style: path.resolve(__dirname, 'src', 'style'),
+      'react-hot-loader': path.resolve(path.join(__dirname, './node_modules/react-hot-loader/'))
+    }
+    // plugins: [new TsConfigPathsPlugin()]
   },
   module: {
-    rules: [{
-      test: /\.tsx?$/,
-      use: ['awesome-typescript-loader']
-    }, {
-      enforce: 'pre',
-      test: /\.js$/,
-      use: ['happypack/loader']
-    }, {
-      test: /\.(css|less)$/,
-      use: ['style-loader', 'css-loader', 'less-loader']
-    }]
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+            babelrc: false,
+            presets: [
+              [
+                '@babel/preset-env',
+                { targets: { browsers: 'last 2 versions' } } // or whatever your project requires
+              ],
+              '@babel/preset-typescript',
+              '@babel/preset-react'
+            ],
+            plugins: [
+              // plugin-proposal-decorators is only needed if you're using experimental decorators in TypeScript
+              ['@babel/plugin-proposal-decorators', { legacy: true }],
+              ['@babel/plugin-proposal-class-properties', { loose: true }],
+              'react-hot-loader/babel'
+            ]
+          }
+        }
+        // use: ['react-hot-loader', 'awesome-typescript-loader']
+      },
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        use: ['happypack/loader']
+      },
+      {
+        test: /\.(css|less)$/,
+        use: ['style-loader', 'css-loader', 'less-loader']
+      }
+    ]
   },
   devtool: 'source-map',
   devServer: {
@@ -51,6 +78,8 @@ const config = {
     // 'react-dom': 'ReactDOM'
   },
   plugins: [
+    new ForkTsCheckerWebpackPlugin(),
+    new webpack.NamedModulesPlugin(),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Hello World',

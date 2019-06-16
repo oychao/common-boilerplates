@@ -13,7 +13,8 @@
       "store/*": ["src/store/*"]
     },
     "sourceMap": true,
-    "target": "es6"
+    "target": "es6",
+    "experimentalDecorators": true
   },
   "include": ["./src/**/*", "../bin/**/*"]
 }

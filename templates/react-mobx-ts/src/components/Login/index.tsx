@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader';
 import * as React from 'react';
 import { Input, Button } from 'antd';
 
@@ -25,12 +26,7 @@ export class Login extends React.PureComponent<IProps, any> {
             <Input size="large" placeholder="Password" />
           </div>
           <div className="login__form__row__control">
-            <Button
-              size="large"
-              type="primary"
-              className="login__button"
-              onClick={this.login}
-            >
+            <Button size="large" type="primary" className="login__button" onClick={this.login}>
               Login
             </Button>
           </div>
@@ -45,4 +41,4 @@ export class Login extends React.PureComponent<IProps, any> {
   };
 }
 
-export default withRouter(Login);
+export default hot(module)(withRouter(Login));

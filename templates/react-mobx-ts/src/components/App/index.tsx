@@ -1,6 +1,6 @@
+import { hot } from 'react-hot-loader';
 import * as React from 'react';
 import { HashRouter, Route, Redirect, Switch } from 'react-router-dom';
-import { hot } from 'react-hot-loader';
 
 import Home from '../Home';
 import Login from '../Login';
