@@ -13,7 +13,7 @@
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
     "build:debug": "cross-env WEBPACK_DEBUG=true npm run build",
-    "start": "cross-env NODE_ENV=development webpack-dev-server",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --hot",
     "test": "mocha --require intelli-espower-loader test/**/*.spec.js"
   },
   "devDependencies": {

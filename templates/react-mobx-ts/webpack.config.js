@@ -97,7 +97,7 @@ const config = {
 // development config
 if (process.env.NODE_ENV === 'development') {
   config.output.filename = 'js/[name].[hash:8].js';
-  config.plugins.push(new webpack.HotModuleReplacementPlugin());
+  // config.plugins.push(new webpack.HotModuleReplacementPlugin());
   config.optimization = {
     minimize: false
   };

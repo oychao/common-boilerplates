@@ -12,7 +12,7 @@ export class Index extends React.PureComponent<IProps, any> {
   public static defaultProps: Partial<any> = {};
 
   @observable
-  private list: string[] = ['ga@rabomve.mvs', 'gersabtav@kifous.mz', 'nefjegi@fa.gl', 'netuwuc@mok.sx'];
+  private list: string[] = ['ga@rabomve.mv', 'gersabtav@kifous.mz', 'nefjegi@fa.gl', 'netuwuc@mok.sxx'];
 
   constructor(props: any) {
     super(props);
@@ -33,7 +33,7 @@ export class Index extends React.PureComponent<IProps, any> {
 
   @action
   public componentDidMount(): void {
-    this.list.push('nonoze@gif.cmhaha');
+    this.list.push('nonoze@gif.cmo');
   }
 }
 
