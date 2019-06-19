@@ -1,10 +1,11 @@
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import * as React from 'react';
 import { HashRouter, Route, Redirect, Switch } from 'react-router-dom';
 
 import Home from '../Home';
-import Login from '../Login';
+import Nav from './Nav';
 
+import 'antd/dist/antd.css';
 import './style.less';
 
 class App extends React.Component<any, any> {
@@ -25,10 +26,10 @@ class App extends React.Component<any, any> {
     return (
       <HashRouter>
         <div className="app">
+          <Nav />
           <Switch>
             <Route exact path="/" render={() => <Redirect to="/index" />} />
             <Route exact path="/index" component={Home} />
-            <Route exact path="/login" component={Login} />
           </Switch>
         </div>
       </HashRouter>
@@ -38,4 +39,4 @@ class App extends React.Component<any, any> {
   public componentWillMount(): void {}
 }
 
-export default hot(module)(App);
+export default hot(App);

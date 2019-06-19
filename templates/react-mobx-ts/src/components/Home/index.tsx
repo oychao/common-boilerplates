@@ -1,9 +1,7 @@
-import { hot } from 'react-hot-loader';
+import { hot } from 'react-hot-loader/root';
 import * as React from 'react';
 import { observable, action } from 'mobx';
 import { observer } from 'mobx-react';
-
-import withNav from '../App/Nav';
 
 interface IProps {}
 
@@ -12,7 +10,7 @@ export class Index extends React.PureComponent<IProps, any> {
   public static defaultProps: Partial<any> = {};
 
   @observable
-  private list: string[] = ['ga@rabomve.mv', 'gersabtav@kifous.mz', 'nefjegi@fa.gl', 'netuwuc@mok.sxx'];
+  private list: string[] = ['ga@rabomve.mv', 'gersabtav@kious.mz', 'nefjegi@fa.gl', 'netuwuc@mok.sx'];
 
   constructor(props: any) {
     super(props);
@@ -33,8 +31,8 @@ export class Index extends React.PureComponent<IProps, any> {
 
   @action
   public componentDidMount(): void {
-    this.list.push('nonoze@gif.cmo');
+    this.list.push('nonoze@gif.co');
   }
 }
 
-export default hot(module)(withNav(Index));
+export default hot(Index);

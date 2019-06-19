@@ -3,7 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 
 interface IProps {}
 
-export class Nav extends React.PureComponent<IProps, any> {
+class Nav extends React.PureComponent<IProps, any> {
   public static defaultProps: Partial<any> = {};
 
   constructor(props: any) {
@@ -27,19 +27,4 @@ export class Nav extends React.PureComponent<IProps, any> {
   }
 }
 
-const RouteNav = withRouter(Nav);
-
-const withNav = (CompClass: React.ComponentClass): React.ComponentClass => {
-  return class NavWrapper extends React.Component {
-    render(): JSX.Element {
-      return (
-        <>
-          <RouteNav />
-          <CompClass />
-        </>
-      );
-    }
-  };
-};
-
-export default withNav;
+export default Nav;
