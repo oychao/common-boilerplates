@@ -26,7 +26,7 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "test": "mocha --require babel-register test/**/*.spec.js",
+    "test": "mocha --require babel-register --require babel-polyfill test/**/*.spec.js",
     "prepare": "npm run build",
     "watch": "npm-watch build"
   },
@@ -34,6 +34,7 @@
     "@types/node": "^12.11.1",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
