@@ -5,7 +5,7 @@ export default [{
   input: './index.js',
   output: [{
     banner: '#!/usr/bin/env node',
-    file: 'bin/bundle.js',
+    file: 'bin/index.js',
     format: 'cjs'
   }],
   plugins: [
