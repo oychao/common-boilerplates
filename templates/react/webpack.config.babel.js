@@ -2,7 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
-import CleanWebpackPlugin from 'clean-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
@@ -128,7 +128,7 @@ if (process.env.NODE_ENV === 'production') {
       chunkFilename: 'css/[name].[contenthash:8].css'
     }),
     new OptimizeCSSAssetsPlugin({})
-  ].forEach(plugin => config.plugins.push(plugin));
+  ].forEach((plugin) => config.plugins.push(plugin));
   config.optimization = {
     minimize: true,
     minimizer: [
