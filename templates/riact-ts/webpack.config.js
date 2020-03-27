@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -51,7 +51,7 @@ const config = {
     // 'react-dom': 'ReactDOM'
   },
   plugins: [
-    new CleanWebpackPlugin(path.resolve(__dirname, 'dist')),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Hello World',
       template: path.resolve(__dirname, 'index.html')
