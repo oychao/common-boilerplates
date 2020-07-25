@@ -7,5 +7,5 @@ export default {
   view,
   actionTypes,
   actions,
-  reducer
+  reducer,
 };

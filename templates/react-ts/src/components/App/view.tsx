@@ -8,7 +8,7 @@ import './style.less';
 
 class App extends React.Component<any, any> {
   public static defaultProps: Partial<any> = {
-    count: 0
+    count: 0,
   };
 
   constructor(props: any) {
@@ -22,22 +22,22 @@ class App extends React.Component<any, any> {
 
   render(): JSX.Element {
     return (
-      <div className="app">
+      <div className='app'>
         <h1>React</h1>
         <HashRouter>
           <div>
-            <ul className="app__router">
+            <ul className='app__router'>
               <li>
-                <Link to="/counter">Counter</Link>
+                <Link to='/counter'>Counter</Link>
               </li>
               <li>
-                <Link to="/field">Field</Link>
+                <Link to='/field'>Field</Link>
               </li>
             </ul>
             <hr />
-            <Route exact path="/" render={() => <Redirect to="/counter" />} />
-            <Route exact path="/counter" component={Counter.view} />
-            <Route exact path="/field" component={Field.view} />
+            <Route exact path='/' render={() => <Redirect to='/counter' />} />
+            <Route exact path='/counter' component={Counter.view} />
+            <Route exact path='/field' component={Field.view} />
           </div>
         </HashRouter>
       </div>

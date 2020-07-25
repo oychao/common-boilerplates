@@ -9,6 +9,6 @@ export interface IAppDispatchToProps {
 export interface IAppProps extends IAppStateToProps, IAppDispatchToProps {}
 export interface IAppReduxState extends Partial<IAppStateToProps> {}
 export interface IReduxState {
-  history: any,
-  app: IAppStateToProps
+  history: any;
+  app: IAppStateToProps;
 }

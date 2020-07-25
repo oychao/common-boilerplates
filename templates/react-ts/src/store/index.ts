@@ -12,7 +12,7 @@ const composeEnhancers = (<any>window).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || c
 const store = createStore(
   combineReducers({
     router: connectRouter(history),
-    app: App.reducer
+    app: App.reducer,
   }),
   composeEnhancers(applyMiddleware(routerMiddleware(history)))
 );

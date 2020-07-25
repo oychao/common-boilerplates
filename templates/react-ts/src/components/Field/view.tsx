@@ -6,7 +6,7 @@ import * as AppTypes from 'comps/App/type';
 
 class Field extends React.PureComponent<any, any> {
   public static defaultProps: Partial<any> = {
-    text: ''
+    text: '',
   };
 
   constructor(props: any) {
@@ -22,27 +22,18 @@ class Field extends React.PureComponent<any, any> {
     const { text } = this.props;
     return (
       <div>
-        <input type="text" onInput={this.handleInput} defaultValue={text} />
+        <input type='text' onInput={this.handleInput} defaultValue={text} />
         <h4>{text}</h4>
       </div>
     );
   }
 }
 
-const mapStateToProps = (
-  state: AppTypes.IReduxState,
-  props: object
-): AppTypes.IAppStateToProps => state.app;
-const mapDispatchToProps = (
-  dispatch: any,
-  props: object
-): AppTypes.IAppDispatchToProps => ({
+const mapStateToProps = (state: AppTypes.IReduxState, props: object): AppTypes.IAppStateToProps => state.app;
+const mapDispatchToProps = (dispatch: any, props: object): AppTypes.IAppDispatchToProps => ({
   handleInput(text: string) {
     dispatch(App.actions.input(text));
-  }
+  },
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Field);
+export default connect(mapStateToProps, mapDispatchToProps)(Field);

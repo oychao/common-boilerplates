@@ -7,7 +7,7 @@ import * as actionTypes from './actionTypes';
 export default (
   state: IAppReduxState = {
     count: 0,
-    text: ''
+    text: '',
   },
   { type, payload }: IAction
 ) => {

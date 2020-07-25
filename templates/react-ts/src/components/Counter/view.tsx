@@ -6,7 +6,7 @@ import * as AppTypes from 'comps/App/type';
 
 export class Counter extends React.PureComponent<any, any> {
   public static defaultProps: Partial<any> = {
-    count: 0
+    count: 0,
   };
 
   constructor(props: any) {
@@ -29,20 +29,11 @@ export class Counter extends React.PureComponent<any, any> {
   }
 }
 
-const mapStateToProps = (
-  state: AppTypes.IReduxState,
-  props: object
-): AppTypes.IAppStateToProps => state.app;
-const mapDispatchToProps = (
-  dispatch: any,
-  props: object
-): AppTypes.IAppDispatchToProps => ({
+const mapStateToProps = (state: AppTypes.IReduxState, props: object): AppTypes.IAppStateToProps => state.app;
+const mapDispatchToProps = (dispatch: any, props: object): AppTypes.IAppDispatchToProps => ({
   handleCount(num: number) {
     dispatch(App.actions.add(num));
-  }
+  },
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

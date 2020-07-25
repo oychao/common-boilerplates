@@ -11,27 +11,27 @@ import './style.less';
 interface IProps {}
 
 class App extends React.Component<IProps> {
-    public static defaultProps: IProps = {};
+  public static defaultProps: IProps = {};
 
-    constructor(props: any) {
-        super(props);
-    }
+  constructor(props: any) {
+    super(props);
+  }
 
-    render(): JSX.Element {
-        return (
-            <HashRouter>
-                <div className="app">
-                    <Nav />
-                    <Switch>
-                        <Route exact path="/" render={() => <Redirect to="/index" />} />
-                        <Route exact path="/index" component={Home} />
-                    </Switch>
-                </div>
-            </HashRouter>
-        );
-    }
+  render(): JSX.Element {
+    return (
+      <HashRouter>
+        <div className='app'>
+          <Nav />
+          <Switch>
+            <Route exact path='/' render={() => <Redirect to='/index' />} />
+            <Route exact path='/index' component={Home} />
+          </Switch>
+        </div>
+      </HashRouter>
+    );
+  }
 
-    public componentWillMount(): void {}
+  public componentWillMount(): void {}
 }
 
 export default hot(App);

@@ -15,7 +15,7 @@ const hashHistory = createHashHistory();
 const routingStore = new RouterStore();
 
 const store = {
-    routing: routingStore
+  routing: routingStore,
 };
 
 const history = syncHistoryWithStore(hashHistory, routingStore);
@@ -23,10 +23,10 @@ const history = syncHistoryWithStore(hashHistory, routingStore);
 configure({ enforceActions: 'observed' });
 
 ReactDOM.render(
-    <Provider {...store}>
-        <Router history={history}>
-            <App />
-        </Router>
-    </Provider>,
-    document.querySelector('#app')
+  <Provider {...store}>
+    <Router history={history}>
+      <App />
+    </Router>
+  </Provider>,
+  document.querySelector('#app')
 );

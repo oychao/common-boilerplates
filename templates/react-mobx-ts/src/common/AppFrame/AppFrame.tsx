@@ -8,19 +8,19 @@ interface IProps {}
 
 @observer
 class AppFrame extends React.Component<IProps> {
-    static defaultProps: IProps = {};
+  static defaultProps: IProps = {};
 
-    constructor(props: IProps) {
-        super(props);
-    }
+  constructor(props: IProps) {
+    super(props);
+  }
 
-    render(): JSX.Element {
-        return (
-            <div className="app-frame">
-                <h3>AppFrame</h3>
-            </div>
-        );
-    }
+  render(): JSX.Element {
+    return (
+      <div className='app-frame'>
+        <h3>AppFrame</h3>
+      </div>
+    );
+  }
 }
 
 export default hot(module)(AppFrame);
