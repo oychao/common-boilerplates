@@ -1,3 +1,3 @@
-export default function (world: string): string {
+export function main (world: string): string {
   return `hello ${world}`;
 };
