@@ -30,6 +30,6 @@
       }
     ]
   },
-  "exclude": ["node_modules", "build", "*.js", "bin/*.d.ts", "demo"],
+  "exclude": ["node_modules", "*.js", "bin/*.d.ts", "demo"],
   "typeRoots": ["node", "node_modules/@types", "./typings"]
 }
