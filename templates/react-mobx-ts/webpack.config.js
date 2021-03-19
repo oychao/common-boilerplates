@@ -89,7 +89,7 @@ const config = {
       defaultAttribute: 'defer'
     }),
     new HappyPack({
-      loaders: ['source-map-loader']
+      loaders: ['babel-loader']
     })
   ]
 };
