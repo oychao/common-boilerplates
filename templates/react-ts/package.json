@@ -55,10 +55,7 @@
     "immutable": "^4.0.0-rc.12",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
-    "redux-actions": "^2.6.5",
-    "redux-thunk": "^2.3.0",
     "seamless-immutable": "^7.1.4"
   }
 }

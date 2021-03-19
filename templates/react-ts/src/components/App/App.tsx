@@ -1,12 +1,10 @@
+import { Home } from 'comps/Home';
 import * as React from 'react';
 import { HashRouter, Route, Redirect, Link } from 'react-router-dom';
 
-import Counter from '../Counter';
-import Field from '../Field';
-
 import './style.less';
 
-class App extends React.Component<any, any> {
+export class App extends React.Component<any, any> {
   public static defaultProps: Partial<any> = {
     count: 0,
   };
@@ -28,21 +26,18 @@ class App extends React.Component<any, any> {
           <div>
             <ul className='app__router'>
               <li>
-                <Link to='/counter'>Counter</Link>
+                <Link to='/home'>Home</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to='/field'>Field</Link>
-              </li>
+              </li> */}
             </ul>
             <hr />
-            <Route exact path='/' render={() => <Redirect to='/counter' />} />
-            <Route exact path='/counter' component={Counter.view} />
-            <Route exact path='/field' component={Field.view} />
+            <Route exact path='/home' component={Home} />
+            <Redirect to='/home' />
           </div>
         </HashRouter>
       </div>
     );
   }
 }
-
-export default App;
