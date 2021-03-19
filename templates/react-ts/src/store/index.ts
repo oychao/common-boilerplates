@@ -7,14 +7,12 @@ import App from '../components/App';
 const history = createBrowserHistory();
 
 // do not use this enhancer when in production environment
-const composeEnhancers = (<any>window).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(
+export const store: any = createStore(
   combineReducers({
     router: connectRouter(history),
     app: App.reducer,
   }),
   composeEnhancers(applyMiddleware(routerMiddleware(history)))
 );
-
-export default store;
