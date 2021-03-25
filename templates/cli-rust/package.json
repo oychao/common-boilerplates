@@ -1,0 +1,60 @@
+{
+  "name": "cli-rust",
+  "version": "0.0.1",
+  "description": "a cli tool in rust",
+  "main": "./bin/index.js",
+  "author": {
+    "name": "your name",
+    "email": "your@email.com"
+  },
+  "license": "WTFPL",
+  "keywords": [],
+  "repository": "https://github.com/your/package/address",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "build:rs": "cargo build --target=wasm32-unknown-unknown",
+    "build:ts": "tsc",
+    "build": "npm run build:rs && npm run build:ts",
+    "watch": "concurrently --kill-others 'npm-watch build:rs' 'npm-watch build:ts'"
+  },
+  "files": [
+    "LICENSE.md",
+    "README.md",
+    "bin/"
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "hello": "./bin/main.js"
+  },
+  "watch": {
+    "build:rs": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": [
+        "rs"
+      ]
+    },
+    "build:ts": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": [
+        "ts"
+      ]
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.20",
+    "@types/yargs": "^15.0.12",
+    "concurrently": "^6.0.0",
+    "npm-watch": "^0.7.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "ora": "^5.2.0",
+    "yargs": "^16.2.0"
+  }
+}
