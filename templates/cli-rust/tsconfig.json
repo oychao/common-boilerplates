@@ -5,7 +5,7 @@
     "module": "commonjs",
     "strict": true,
     "esModuleInterop": true,
-    "rootDir": "src",
+    "rootDir": "src-ts",
     "outDir": "bin",
     "sourceMap": true
   }
