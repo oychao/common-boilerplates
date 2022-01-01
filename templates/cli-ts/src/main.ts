@@ -4,10 +4,10 @@
 import yargs from 'yargs';
 import ora from 'ora';
 
-const main = () => {
+const main = async () => {
   // console.log(chalk.yellow('hello cli'));
 
-  const args = yargs.options({
+  const args = await yargs.options({
     instructions: { type: 'string', demandOption: true, alias: 'i' },
   }).argv;
 
