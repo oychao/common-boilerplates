@@ -1,12 +1,12 @@
-import babel from 'rollup-plugin-babel';
-import json from 'rollup-plugin-json';
+import babel from '@rollup/plugin-babel';
+import json from '@rollup/plugin-json';
 
 export default [{
   input: './index.js',
   output: [{
     banner: '#!/usr/bin/env node',
     file: 'bin/index.js',
-    format: 'cjs'
+    format: 'es'
   }],
   plugins: [
     babel({

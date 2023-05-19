@@ -5,7 +5,7 @@
     "es6": true
   },
   "extends": "airbnb-base",
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "plugins": ["react"],
   "rules": {
     "strict": 1,

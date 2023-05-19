@@ -1,11 +1,11 @@
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 
 export default {
   input: './index.js',
   output: [
     {
       file: 'bin/bundle.js',
-      format: 'umd',
+      format: 'es',
       name: 'helloUmd'
     }
   ],
