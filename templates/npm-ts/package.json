@@ -27,12 +27,12 @@
   },
   "scripts": {
     "build": "npm run build:tsc",
-    "build:tsc": "rm -rf bin && tsc",
+    "build:tsc": "rm -rf bin && tsc && tsc-alias",
     "test": "mocha --require babel-register --require babel-polyfill test/**/*.spec.js",
     "watch": "npm-watch build"
   },
   "devDependencies": {
-    "@types/node": "^20.2.1",
+    "@types/node": "^20.4.8",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-polyfill": "^6.26.0",
@@ -42,9 +42,9 @@
     "mocha": "^10.2.0",
     "mocha-sinon": "^2.1.2",
     "npm-watch": "^0.11.0",
-    "sinon": "^15.1.0",
-    "typescript": "^5.0.4",
+    "sinon": "^15.2.0",
+    "tsc-alias": "^1.8.7",
+    "typescript": "^5.1.6",
     "typescript-transform-paths": "^3.4.6"
-  },
-  "dependencies": {}
+  }
 }
