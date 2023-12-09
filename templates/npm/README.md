@@ -1,1 +1,1 @@
-# edit your docs here
+# a npm package
