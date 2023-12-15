@@ -2,7 +2,7 @@
   "compilerOptions": {
     "rootDir": "src",
     "baseUrl": "src",
-    "outDir": "bin",
+    "outDir": "dist",
     "sourceMap": true,
     "module": "ESNext",
     "target": "ESNext",
@@ -30,6 +30,6 @@
       }
     ]
   },
-  "exclude": ["node_modules", "*.js", "bin/*.d.ts", "demo"],
+  "exclude": ["node_modules", "*.js", "dist/*.d.ts", "demo", "test"],
   "typeRoots": ["node", "node_modules/@types", "./typings"]
 }

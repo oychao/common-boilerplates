@@ -1,8 +1,8 @@
 {
   "name": "npm-ts-demo",
   "version": "1.0.0",
-  "main": "./bin/index.js",
-  "typings": "./bin/index.d.ts",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "type": "module",
   "author": {
     "name": "your name",
@@ -15,7 +15,7 @@
   "files": [
     "LICENSE.md",
     "README.md",
-    "bin/"
+    "dist/"
   ],
   "watch": {
     "build": {
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "build": "npm run build:tsc",
-    "build:tsc": "rm -rf bin && tsc && tsc-alias",
+    "build:tsc": "rm -rf dist && tsc && tsc-alias",
     "test": "mocha test/**/*.spec.ts",
     "watch": "npm-watch build"
   },
