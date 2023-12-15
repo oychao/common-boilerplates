@@ -1,0 +1,67 @@
+{
+  "name": "vite-plugin-ts-demo",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "typings": "./dist/types",
+  "type": "module",
+  "author": {
+    "name": "your name",
+    "email": "your@email.com"
+  },
+  "license": "WTFPL",
+  "repository": "https://github.com/your/package/address",
+  "keywords": [],
+  "description": "a npm package in typescript",
+  "files": [
+    "LICENSE.md",
+    "README.md",
+    "bin/"
+  ],
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts"
+    }
+  },
+  "scripts": {
+    "build": "npm run build:tsc",
+    "build:tsc": "rm -rf bin && tsc && tsc-alias",
+    "test": "mocha test/**/*.spec.ts",
+    "watch": "npm-watch build"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.6",
+    "@babel/preset-typescript": "^7.23.3",
+    "merge-anything": "^5.1.7",
+    "vitefu": "^0.2.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-typescript": "^7.23.6",
+    "@babel/preset-env": "^7.23.6",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@skypack/package-check": "^0.2.2",
+    "@types/babel__core": "^7.20.5",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.10.4",
+    "@types/sinon": "^17.0.2",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "npm-watch": "^0.11.0",
+    "rollup": "^4.9.0",
+    "rollup-plugin-cleaner": "^1.0.0",
+    "sinon": "^17.0.1",
+    "tsc-alias": "^1.8.8",
+    "tsx": "^4.6.2",
+    "typescript": "^5.3.3",
+    "typescript-transform-paths": "^3.4.6",
+    "vite": "^5.0.8"
+  },
+  "peerDependencies": {
+    "vite": "^3.0.0 || ^4.0.0 || ^5.0.0"
+  }
+}
